@@ -1,0 +1,13 @@
+setopt prompt_subst;
+
+PROMPT_LOG='%n@%m';
+PROMPT_PWD='%73<…<%~';
+PROMPT_GIT='$(gitprompt)';
+PROMPT_PWL='
+%(!.#.$)';
+
+PROMPT="";
+PROMPT+="%(!.%F{red}.%F{green})${PROMPT_LOG}%f ";
+PROMPT+="%(!.%F{magenta}.%F{blue})${PROMPT_PWD}%f ";
+PROMPT+="${PROMPT_GIT}";
+PROMPT+="%(?..%{$fg[red]%})${PROMPT_PWL} ";

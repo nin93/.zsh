@@ -1,0 +1,26 @@
+# vim:ft=zsh
+
+### Zsh aliases ###
+
+# Auto colorized commands
+for acol in ls grep egrep fgrep; do
+  alias $acol="$acol --color=auto"
+done
+
+# Automatize mp3/wav downloading and conversion from a YT playlist
+for ft in mp3 wav; do
+  alias ytdl$ft="yt-dlp -x --extract-audio --audio-format $ft -o '%(playlist_index)s. %(title)s.%(ext)s'"
+done
+
+# Git aliases
+alias g="git"
+alias dots="git --git-dir='${HOME}/.local/share/dotfiles' --work-tree='${HOME}'"
+
+# Ls aliases
+alias ls="eza"
+alias la="eza -a"
+alias ll="eza -la"
+
+# Misc commands
+alias nv="nvim"
+alias clip="xclip -rmlastnl -selection clipboard"

@@ -1,0 +1,29 @@
+# Lets files beginning with a . be matched without explicitly specifying the dot.
+setopt globdots
+
+autoload -Uz compinit && compinit
+
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
+
+# force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
+zstyle ':completion:*' menu no
+
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' completer _complete _correct _approximate;
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*';
+
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+zstyle ':completion:*' sort access
+
+zstyle ':completion:*' use-compctl false;
+zstyle ':completion:*' squeeze-slashes true
+
+#zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+#zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd';
+
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':fzf-tab:*' fzf-flags --color=fg:-1,fg+:-1,bg:-1,bg+:#292e42,prompt:6,pointer:6,marker:2,spinner:2,header:1,info:2,hl:5,hl+:5 --bind=tab:accept
+zstyle ':fzf-tab:*' switch-group '[' ']'

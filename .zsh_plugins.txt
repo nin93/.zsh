@@ -1,0 +1,5 @@
+nin93/git-prompt.zsh
+mattmc3/zfunctions
+Aloxaf/fzf-tab
+zdharma-continuum/fast-syntax-highlighting kind:defer
+zsh-users/zsh-autosuggestions kind:defer

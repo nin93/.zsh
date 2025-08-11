@@ -1,0 +1,40 @@
+# Enable vim mode
+bindkey -v
+
+zmodload zsh/complist
+
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect '^H' vi-backward-char
+
+bindkey -v '^P' up-line-or-history
+bindkey -v '^K' up-line-or-history
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect '^K' vi-up-line-or-history
+
+bindkey -v '^N' down-line-or-history
+bindkey -v '^J' down-line-or-history
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect '^J' vi-down-line-or-history
+
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect '^L' vi-forward-char
+
+# Ensure backspace is preserved after vim `A` command
+bindkey -v '^?' backward-delete-char
+
+bindkey ^R history-incremental-search-backward 
+bindkey ^S history-incremental-search-forward
+
+autoload -Uz surround
+
+zle -N delete-surround surround
+zle -N add-surround surround
+zle -N change-surround surround
+
+# Similar tim-pope vim-surround mappings
+bindkey -M vicmd cs change-surround
+bindkey -M vicmd ds delete-surround
+bindkey -M visual S add-surround
+
+# Use ctrl + space to accept history suggestions
+bindkey '^ ' autosuggest-accept
