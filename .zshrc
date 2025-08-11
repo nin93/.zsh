@@ -13,8 +13,9 @@ imports=(.zshalias .zshfun .zshprompt .zshbindkey .zshcomp)
 
 for local_import in "${imports[@]}"; do
 	if [[ -r "${zdotdir}/${local_import}" ]]; then
-		echo "${zdotdir}/${local_import}"
 		source "${zdotdir}/${local_import}"
+
+		zcompile "${zdotdir}/${local_import}"
 	fi
 done
 
