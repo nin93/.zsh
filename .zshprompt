@@ -1,3 +1,5 @@
+# vim:ft=sh
+
 setopt prompt_subst;
 
 PROMPT_LOG='%n@%m';

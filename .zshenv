@@ -1,4 +1,6 @@
-## ============= Zsh Environment ============= ##
+# vim:ft=sh
+
+### Zsh Environment ###
 
 # Allow coloring before .zshrc is loaded
 autoload -U colors && colors;
