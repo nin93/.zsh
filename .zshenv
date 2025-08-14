@@ -112,22 +112,3 @@ local LS_VIDEO="*.mov=00;32:*.mpg=00;32:*.mpeg=00;32:*.m2v=00;32:*.mkv=00;32:\
 *.xcf=00;32:*.xwd=00;32:*.yuv=00;32:*.cgm=00;32:*.emf=00;32:*.ogv=00;32:*.ogx=00;32"
 
 export LS_COLORS="${LS_STANDARD}:${LS_ARCHIVES}:${LS_AUDIO}:${LS_VIDEO}:${LS_IMAGES}"
-
-# Path Defaults
-export PATH="\
-/usr/local/bin:\
-/usr/local/sbin:\
-/usr/local/games:\
-/usr/lib/jvm/java-8-oracle/bin:\
-/usr/lib/jvm/java-8-oracle/db/bin:\
-/usr/lib/jvm/java-8-oracle/jre/bin:\
-/usr/bin:\
-/usr/sbin:\
-/usr/games:\
-/bin:\
-/sbin:\
-/opt/bin:\
-/usr/local/go/bin:\
-${HOME}/.local/bin:\
-${HOME}/.cargo/bin:\
-${HOME}/bin"
