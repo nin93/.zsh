@@ -9,13 +9,15 @@ setopt histignorealldups sharehistory
 
 zdotdir="${ZDOTDIR:-~}"
 
-imports=(.zshalias .zshfun .zshprompt .zshbindkey .zshcomp)
+imports=(.zshenvrc .zshalias .zshfun .zshprompt .zshbindkey .zshcomp)
 
 for local_import in "${imports[@]}"; do
 	if [[ -r "${zdotdir}/${local_import}" ]]; then
 		source "${zdotdir}/${local_import}"
 
-		zcompile "${zdotdir}/${local_import}"
+		if [[ ! "${zdotdir}/${local_import}.zwc" -nt "${zdotdir}/${local_import}" ]]; then
+			zcompile "${zdotdir}/${local_import}"
+		fi
 	fi
 done
 
