@@ -8,15 +8,18 @@ for acol in ls grep egrep fgrep; do
 done
 
 # Automatize mp3/wav downloading and conversion from a YT playlist
-for ft in mp3 wav; do
-	alias ytdl$ft="yt-dlp -x --extract-audio --audio-format $ft -o '%(playlist_index)s. %(title)s.%(ext)s'"
-done
+if command -v yt-dlp >/dev/null; then
+	for ft in mp3 wav; do
+		alias ytdl$ft="yt-dlp -x --extract-audio --audio-format $ft -o '%(playlist_index)s. %(title)s.%(ext)s'"
+	done
+fi
 
 # Ls aliases
 if command -v eza >/dev/null; then
-	alias ls="eza"
-	alias la="eza -a"
+	alias ls="eza -a"
 	alias ll="eza -la"
 fi
 
-alias clip="xclip -rmlastnl -selection clipboard"
+if command -v xclip >/dev/null; then
+	alias clip="xclip -rmlastnl -selection clipboard"
+fi
