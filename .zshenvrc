@@ -34,8 +34,8 @@ export ZSH_GIT_PROMPT_FORCE_BLANK=""
 export ZSH_GIT_PROMPT_AWK_CMD=""
 
 # Theming
-export ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[black]%}["
-export ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[black]%}]"
+export ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[black]%}["
+export ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg_bold[black]%}]"
 export ZSH_THEME_GIT_PROMPT_SPATIATOR=" "
 export ZSH_THEME_GIT_PROMPT_SEPARATOR=""
 export ZSH_THEME_GIT_PROMPT_DETACHED="%{$fg[cyan]%}:"

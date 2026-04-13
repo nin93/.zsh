@@ -26,7 +26,7 @@ function zle-timer-diff() {
 		now=$(date +%s%0N)
 		seconds=$(echo "scale=3; $(($now - $timer)) / 1000000000" | bc)
 
-		export RPROMPT="%{$fg[black]%}$(_tdiff $seconds)%{$reset_color%}"
+		export RPROMPT="%{$fg_bold[black]%}$(_tdiff $seconds)%{$reset_color%}"
 		unset timer
 	fi
 }
